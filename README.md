@@ -107,8 +107,8 @@ Reranking performs a second pass over the `top_k`*`Constants.RERANKER_MULTIPLIER
 To set up the project, you need to have `Python 3.11.4` and `Conda 23.7.3` installed on your machine.
 
 ```bash
-git clone https://github.com/detker/jetbrainsRAG
-cd jetbrainsRAG
+git clone https://github.com/detker/LLM-RAG-project
+cd LLM-RAG-project
 conda create -n llm_rag python=3.11.4
 conda activate llm_rag
 pip install -r requirements.txt

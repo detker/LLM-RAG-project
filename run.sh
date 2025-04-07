@@ -38,7 +38,7 @@ dataset=$(get_user_choice "Select a dataset: " datasets)
 chunking_strategy=$(get_user_choice "Select a chunking strategy: " chunking_strategies)
 embedding_model=$(get_user_choice "Select an embedding model: " embedding_models)
 top_k=$(get_user_choice "Select top_k value: " top_k_values)
-enable_reranker=$(get_user_choice "Enable reranker? (yes/no): " enable_reranker_set)
+enable_reranker=$(get_user_choice "Enable reranker? (1/2): " enable_reranker_set)
 
 echo ""
 echo -e "${BLUE}${BOLD}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${NC}"

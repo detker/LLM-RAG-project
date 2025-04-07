@@ -1,5 +1,12 @@
 {
-    "iou_score": 0.04512450191355461,
-    "recall_score": 0.7976012175959286,
-    "precision_score": 0.04538893325419158
+    "mean": {
+        "iou_score": 0.04512450191355461,
+        "recall_score": 0.7976012175959286,
+        "precision_score": 0.04538893325419158
+    },
+    "std": {
+        "iou_score_std": 0.031156222838582465,
+        "recall_score_std": 0.36296599308145094,
+        "precision_score_std": 0.03127668235983021
+    }
 }

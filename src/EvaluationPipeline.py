@@ -27,7 +27,7 @@ class EvaluationPipeline:
     5. Optionally rerank documents using a cross-encoder model
     6. Evaluate retrieval quality using standard metrics (IoU, recall, precision)
 
-    The pipeline supports multi-threaded document reranking for improved performance.
+    The pipeline supports multithreaded document reranking for improved performance.
     """
 
     def __init__(self,
@@ -141,7 +141,7 @@ class EvaluationPipeline:
 
     def evaluate_retrievals(self,
                             corpus_id: str,
-                            min_top_k: bool = False) -> dict[str, floating[Any]]:
+                            min_top_k: bool = False) -> (dict[str, floating[Any]], dict[str, floating[Any]]):
         """
         Evaluate retrieval performance for a corpus using the complete pipeline.
 
@@ -207,8 +207,9 @@ class EvaluationPipeline:
 
             metrics = self.retrieval_evaluator.evaluate_retrievals(top_chunks, queries_df, min_top_k)
             metrics_mean = {k: np.mean(v) for k, v in metrics.items()}
+            metrics_std = {k+'_std': np.std(v) for k, v in metrics.items()}
 
-            return metrics_mean
+            return metrics_mean, metrics_std
 
         except Exception as ex:
             print(f"Error during evaluation: {ex}")

@@ -88,7 +88,8 @@ def main():
         exit(1)
 
     pipeline = EvaluationPipeline(chunker, embd_func, k, reranker)
-    metrics = pipeline.evaluate_retrievals(corpus_id, MINIMALIZE_CHUNKS)
+    metrics_mean, metrics_std = pipeline.evaluate_retrievals(corpus_id, MINIMALIZE_CHUNKS)
+    metrics = {'mean': metrics_mean, 'std': metrics_std}
 
     print(json.dumps(metrics, indent=4))
 
